@@ -1,0 +1,24 @@
+{
+    "stats": {
+        "unresolved": 60,
+        "overdue": 16,
+        "open": 43,
+        "onHold": 64,
+        "resolved": 449,
+        "received": 426,
+        "avgFirstResponse": "33m",
+        "avgResponse": "3h 8m",
+        "sla": "94%"
+    },
+    "unresolvedTickets": [
+        {"category": "Waiting on Feature Request", "count": 4238},
+        {"category": "Awaiting Customer Response", "count": 1005},
+        {"category": "Awaiting Developer Fix", "count": 914},
+        {"category": "Pending", "count": 261}
+    ],
+    "tasks": [
+        {"id": "task1", "title": "Finish ticket update", "badge": "URGENT", "badgeClass": "bg-warning"},
+        {"id": "task2", "title": "Create new ticket example", "badge": "NEW", "badgeClass": "bg-success"},
+        {"id": "task3", "title": "Update ticket report", "badge": "DEFAULT", "badgeClass": "bg-secondary", "checked": true}
+    ]
+}

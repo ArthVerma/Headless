@@ -1,0 +1,154 @@
+$primary-bg: #f8f9fa;
+$sidebar-bg: #363740;
+$white: #ffffff;
+$black: #000000;
+$font-family: Arial, sans-serif;
+$small-font: 12px;
+
+// General Styles
+body {
+    font-family: $font-family;
+    background-color: $primary-bg;
+    margin: 0;
+    padding: 0;
+}
+
+aside.col-md-2.p-4 {
+    height: 205vh;
+    border-right: 1px solid #000000;
+    background-color: #363740;
+    color: #ffffff;
+    transition: all 0.3s ease;
+
+    // Ensure the sidebar is interactable
+    pointer-events: auto;
+
+    a.nav-link {
+        display: block; // Ensure the link takes up space for hover
+        color: #ffffff;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        // Hover and active states
+        &:hover,
+        &.active,
+        &:active { // Added :active for touch devices
+            background-color: #F7F8FC;
+            color: #000000;
+            border-radius: 0px;
+        }
+    }
+}   
+
+.create-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: #9FA2B4;
+}
+
+.profile-pic {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #DFE0EB;
+    margin-left: auto;
+}
+
+.vertical-line {
+    margin: 0 16px;
+}
+
+.col-md-3.mb-3 {
+    .mb-2 {
+        color: #9FA2B4;
+        transition: color 0.3s ease;
+    }
+}
+
+@mixin hover-effect {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(91, 134, 228, 0.479);
+    background-color: #e9ecef;
+    cursor: pointer;
+    border: 2px solid #3751FF;
+}
+
+.hover-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(91, 134, 228, 0.479);
+        background-color: #e9ecef;
+        cursor: pointer;
+        border: 2px solid #3751FF;
+
+        .mb-2 {
+            color: #3751FF;
+        }
+
+        .fs-3 {
+            color: #3751FF;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    aside.col-md-2.p-4 {
+        width: 250px;
+        position: fixed;
+        z-index: 1000;
+        transform: translateX(-100%);
+        pointer-events: auto; // Ensure interactability
+
+        &.visible {
+            transform: translateX(0); // Show sidebar when toggled
+        }
+    }
+    .vertical-line {
+        margin: 0 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    aside.col-md-2.p-4 {
+        width: 200px;
+        transform: translateX(-100%);
+        display: none; // Hidden by default
+        pointer-events: auto;
+
+        &.visible {
+            display: block; // Show when toggled
+            transform: translateX(0);
+        }
+    }
+    .vertical-line {
+        margin: 0 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    aside.col-md-2.p-4 {
+        width: 100%;
+        height: auto;
+        position: fixed; // Keep it fixed for better mobile experience
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        display: none;
+        pointer-events: auto;
+
+        &.visible {
+            display: block;
+            transform: translateX(0);
+        }
+    }
+    .vertical-line {
+        margin: 0 0px;
+    }
+}
